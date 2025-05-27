@@ -30,7 +30,9 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
-
+    dependencies {
+        implementation("io.appwrite:sdk-for-android:6.1.0")
+    }
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.

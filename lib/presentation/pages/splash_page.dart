@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:users_auth/controllers/auth_controller.dart';
-import 'package:users_auth/presentation/pages/home_page.dart';
-import 'package:users_auth/presentation/pages/login_page.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -24,9 +21,11 @@ class SplashPage extends StatelessWidget {
     final isLoggedIn = await authController.checkAuth();
 
     if (isLoggedIn) {
-      Get.off(() => HomePage());
+      //Get.off(() => HomePage());
+      Get.toNamed('/recipes');
     } else {
-      Get.off(() => LoginPage());
+      //Get.off(() => LoginPage());
+      Get.toNamed('/login');
     }
   }
 }
