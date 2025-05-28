@@ -111,7 +111,7 @@ class RecipeCard extends StatelessWidget {
       margin: const EdgeInsets.all(8.0),
       child: ListTile(
         title: _buildHighlightedText(recipe.name, searchQuery),
-        subtitle: Text('Ingredientes: ${recipe.id}'),
+        subtitle: Text('Ingredientes: ${recipe.ingredients.length}'),
         trailing: Text(
           recipe.createdAt.toLocal().toIso8601String().split('T')[0],
           style: const TextStyle(

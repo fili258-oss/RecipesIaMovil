@@ -24,15 +24,18 @@ void main() async {
   final client = AppwriteConfig.initClient();
   final databases = Databases(client);
   final account = Account(client);
+  final storage = Storage(client);
 
   // Dependencies data base
+  // Dependencies account
+  Get.put(AuthRepository(account));
+  
   Get.put(UserRepository(databases));
-  Get.put(RecipeRepository(databases));
+  Get.put(RecipeRepository(databases, storage));
   Get.put(UserController(repository: Get.find()));
   Get.put(RecipeController(repository: Get.find()));
 
-  // Dependencies account
-  Get.put(AuthRepository(account));
+  
   Get.put(AuthController(Get.find()));
 
   runApp(MyApp());

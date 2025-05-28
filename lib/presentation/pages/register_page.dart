@@ -37,7 +37,8 @@ class RegisterPage extends StatelessWidget {
               ),
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: InputDecoration(labelText: 'Correo Electrónico'),
+                keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if (value!.isEmpty) return 'Campo requerido';
                   if (!GetUtils.isEmail(value)) return 'Email inválido';
@@ -46,7 +47,8 @@ class RegisterPage extends StatelessWidget {
               ),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: InputDecoration(labelText: 'Contraseña'),
+                keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
                 validator: (value) {
                   if (value!.isEmpty) return 'Campo requerido';

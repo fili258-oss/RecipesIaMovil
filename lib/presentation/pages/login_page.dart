@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
     final authController = Get.find<AuthController>();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Iniciar Sesión'),
         automaticallyImplyLeading: false,
       ),
       body: Padding(
@@ -28,12 +28,14 @@ class LoginPage extends StatelessWidget {
             children: [
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: InputDecoration(labelText: 'Correo Electrónico'),
+                keyboardType: TextInputType.emailAddress,
                 validator: (value) => value!.isEmpty ? 'Campo requerido' : null,
               ),
               TextFormField(
                 controller: _passwordController,
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: InputDecoration(labelText: 'Contraseña'),
+                keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
                 validator: (value) => value!.isEmpty ? 'Campo requerido' : null,
               ),
